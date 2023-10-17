@@ -1,29 +1,14 @@
-class Student:
-  
- def __int__(self, name, roll_number, cgpa):
-  self.name = name
-  self.roll_number = roll_number
-  self.cgpa = cgpa
-
-
-def sort_students(students_list):
-  
-  sorted_students = sorted(students_list,
-                           key=lambda student: student.cgpa,
-                           reverse=True)
-  
-  return sorted_students
-  
-
-Students = [
-    Student("Hari", "A123", 7.8),
-    Student("Srikanth", "A124", 8.9),
-    Student("Saumya", "A125", 9.1),
-    Student("Mahidhar", "A126", 9.9),
-]
-
-sorted_students = sort_students(Students)
-
-for student in sorted_students:
-  print("Name: {}, Roll Number: {}, CGPA: {}". format(student.name,
-                                                     student.roll_number,student.cgpa))
+  def display_balance(self):
+    print("Account balance for {} (Account #{}): ₹{}".format(
+        self._account_holder_name, self._account_number,
+        self.__account_balance))
+  # Create an instance of the BankAccount class
+  account = BankAccount(account_number="123456789",
+                      account_holder_name="Hari Prabu",
+                      initial_balance=5000.0)
+  # Test deposit and withdrawal functionality
+  account.display_balance()
+  account.deposit(500.0)
+  account.withdraw(200.0)
+  account.withdraw(20000.0)
+  account.display_balance()
